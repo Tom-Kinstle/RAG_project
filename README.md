@@ -1,5 +1,24 @@
 # RAG_project
 
+🏘️ Making HOA Compliance Easier with AI-Powered Search
+
+HOA documents are dense, inconsistent, and hard to search—but compliance questions don’t wait. This project builds a fast, flexible retrieval system that answers common HOA governance questions by scanning bylaws across multiple communities.
+
+What You’ll Learn:
+How retrieval-augmented generation (RAG) can turn static legal text into a dynamic, searchable resource—improving access, clarity, and response time for HOA boards or property managers.
+
+Highlights:
+
+✅ Real questions tied to California HOA law
+
+📁 Auto-loads and processes public HOA files
+
+🔍 Uses chunking, embeddings, and FAISS to surface relevant answers
+
+📊 Includes scoring to explain answer quality (semantic, vector, lexical)
+
+This proof of concept shows how legal and compliance-heavy organizations can use modern search techniques to reduce manual effort and improve transparency.
+
 
 
 
