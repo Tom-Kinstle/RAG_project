@@ -2,10 +2,7 @@
 
 🏘️ Making HOA Compliance Easier with AI-Powered Search
 
-HOA documents are dense, inconsistent, and hard to search—but compliance questions don’t wait. This project builds a fast, flexible retrieval system that answers common HOA governance questions by scanning bylaws across multiple communities.
-
-What You’ll Learn:
-How retrieval-augmented generation (RAG) can turn static legal text into a dynamic, searchable resource—improving access, clarity, and response time for HOA boards or property managers.
+HOA documents are dense, inconsistent, and time-consuming to read, making manual review a slow and error-prone process. This project delivers a fast, flexible retrieval system that answers common HOA governance questions by semantically scanning bylaws across multiple communities—streamlining compliance checks and reducing the burden on human reviewers.
 
 Highlights:
 
