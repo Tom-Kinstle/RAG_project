@@ -16,7 +16,7 @@ Highlights:
 
 This proof of concept shows how legal and compliance-heavy organizations can use modern search techniques to reduce manual effort and improve transparency.
       
-#### Project notebook: https://github.com/Tom-Kinstle/RAG_project/blob/main/rag_test_app.ipynb
+#### Project notebook: [https://g ithub.com/Tom-Kinstle/RAG_project/blob/main/rag_test_app.ipynb](https://github.com/Tom-Kinstle/RAG_project/blob/main/rag_groq_gen.ipynb)
 
 
 
