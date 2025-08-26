@@ -1,42 +1,112 @@
-# RAG_project
+# HOA Document Q&A System - Render Deployment
 
-🏘️ Making HOA Compliance Easier with AI-Powered Search
+A Streamlit application that allows users to ask questions about HOA governing documents using AI and RAG (Retrieval-Augmented Generation).
 
-HOA documents are dense, inconsistent, and time-consuming to read, making manual review a slow and error-prone process. This project delivers a fast, flexible retrieval system that answers common HOA governance questions by semantically scanning bylaws across multiple communities, streamlining compliance checks and reducing the burden on human reviewers.
+## Features
 
-Highlights:
+- 🏠 **Multiple HOA Support**: Select from different HOA document collections
+- 🤖 **AI-Powered Q&A**: Uses OpenAI GPT-4o-mini for intelligent responses
+- 📚 **Document Retrieval**: Advanced semantic search through HOA documents
+- 💬 **Interactive UI**: Clean Streamlit interface with example questions
+- 🔍 **Source Citations**: Shows which documents answers came from
 
-✅ Real questions tied to California HOA law
+## Quick Deploy to Render
 
-📁 Auto-loads and processes public HOA files
+1. **Fork this repository** to your GitHub account
 
-🔍 Uses chunking, embeddings, and FAISS to surface relevant answers
+2. **Connect to Render:**
+   - Go to [render.com](https://render.com) and sign up/login
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository
 
-📊 Includes scoring to explain answer quality (semantic, vector, lexical)
+3. **Configure Environment:**
+   - Set `OPENAI_API_KEY` in Render dashboard
+   - Render will automatically use `render.yaml` configuration
 
-This proof of concept shows how legal and compliance-heavy organizations can use modern search techniques to reduce manual effort and improve transparency.
-      
-#### Project notebook: [https://g ithub.com/Tom-Kinstle/RAG_project/blob/main/rag_test_app.ipynb](https://github.com/Tom-Kinstle/RAG_project/blob/main/rag_groq_gen.ipynb)
+4. **Deploy:**
+   - Click "Create Web Service"
+   - Render will build and deploy automatically
 
+## Local Development
 
+1. **Clone and setup:**
+   ```bash
+   git clone <your-repo>
+   cd hoa-qa-system
+   pip install -r requirements.txt
+   ```
 
+2. **Environment setup:**
+   ```bash
+   cp .env.template .env
+   # Edit .env with your OpenAI API key
+   ```
 
-# Learning 
+3. **Add HOA documents:**
+   ```
+   data/
+   └── hoa_documents/
+       ├── HOA_Name_1/
+       │   ├── bylaws.pdf
+       │   └── covenants.pdf
+       └── HOA_Name_2/
+           └── rules.pdf
+   ```
 
-Vector Databases Professional Certificate (Weaviate)
-https://www.linkedin.com/learning/paths/vector-databases-professional-certificate-by-weaviate
+4. **Run locally:**
+   ```bash
+   streamlit run app.py
+   ```
 
-Build a Retrieval Augmented Generation (RAG) App (LangChain)
-https://python.langchain.com/docs/tutorials/rag/
+## File Structure
 
-1. Different Ways of Creating Python Environment in Data Science Projects- Conda, Virtualenv, Python
-https://www.youtube.com/watch?v=bf7pCxj6mEg
+```
+├── app.py              # Main Streamlit application
+├── requirements.txt    # Python dependencies
+├── render.yaml        # Render deployment configuration
+├── logo.jpg           # Application logo
+├── .env.template      # Environment variables template
+└── data/              # HOA documents directory
+    └── hoa_documents/
+        └── [HOA folders with PDFs]
+```
 
-2. End To End Advanced RAG App Using AWS Bedrock and LangChain
-https://www.youtube.com/watch?v=0LE5XrxGvbo
+## Environment Variables
 
-3. Python RAG Tutorial (with Local LLMs): AI For Your PDFs
-https://www.youtube.com/watch?v=2TJxpyO3ei4&t=12s
+- `OPENAI_API_KEY` (required): Your OpenAI API key
+- `HOA_BASE_DIR` (optional): Custom path to HOA documents
 
-4. How to create new branch in GitHub?
-https://www.youtube.com/watch?v=Wbz8zM_5iCc
+## Architecture
+
+- **Frontend**: Streamlit web interface
+- **Backend**: Python with LangChain for document processing
+- **AI Model**: OpenAI GPT-4o-mini
+- **Embeddings**: HuggingFace BGE-large-en-v1.5
+- **Vector Store**: ChromaDB with persistent storage
+- **PDF Processing**: PyMuPDF for text extraction
+
+## Usage
+
+1. Select an HOA from the dropdown
+2. Wait for documents to load (first time only)
+3. Ask questions or click example questions
+4. View AI-generated answers with source citations
+
+## Example Questions
+
+- "Number of Directors?"
+- "Term of Office?"
+- "Candidate Qualifications/Eligibility Requirements?"
+- "Are write-ins allowed?"
+- "Is there a process for handling tie votes?"
+
+## Deployment Notes
+
+- Uses Render's free tier (512MB RAM)
+- Persistent disk for vector store caching
+- Automatic HTTPS and custom domains available
+- Health checks configured for reliability
+
+## Support
+
+For issues or questions, please check the GitHub repository issues section.
